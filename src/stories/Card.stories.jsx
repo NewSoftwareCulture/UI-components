@@ -36,3 +36,8 @@ export const Title = Template.bind({});
 Title.args = {
   title: 'New Title Card'
 };
+
+export const Title2 = Template.bind({});
+Title.args = {
+  title: 'New Title Card2'
+};
