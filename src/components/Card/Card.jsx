@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './styles/Card.css';
+import style from './styles/index.css';
 
 const Card = (props) => {
   const {
@@ -8,6 +8,7 @@ const Card = (props) => {
     color = 'rgba(43, 173, 224, 0.911)',
     image = 'https://icon-library.com/images/react-icon/react-icon-29.jpg',
     backdropFilter = 'blur(15px)',
+    children,
   } = props;
 
   const styles = {
@@ -18,9 +19,10 @@ const Card = (props) => {
 
   return (
     <div className='card' style={styles}>
-      <div className='image' style={{ backgroundImage: `url(${image})` }}></div>
+      {children}
+      {/* <div className='image' style={{ backgroundImage: `url(${image})` }}></div>
       <span className='title' style={{ color }}>{title}</span>
-      <span className='content'>{content}</span>
+      <span className='content'>{content}</span> */}
     </div>
   )
 }

@@ -27,13 +27,20 @@ export default {
   },
 };
 
-const Template = (args) => <Card {...args} />;
+const Template = (args) =>  <div style={{ 
+  width: '100%',
+  height: '100%',
+  position: 'absolute',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}}><Card {...args} >{args.children}</Card></div>;
 
 export const Default = Template.bind({});
 Default.args = {};
 
 export const Title = Template.bind({});
 Title.args = {
-  title: 'New Title Card'
+  title: 'New Title Card',
 };
 

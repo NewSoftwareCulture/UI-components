@@ -1,0 +1,101 @@
+:root {
+  --tg-theme-button-text-color: rgb(255, 255, 255);
+  --tg-theme-button-color:rgb(48, 123, 208);
+}
+
+.button {
+  --main-color: rgb(0, 94, 255);
+  --background-color: rgb(255, 255, 255);
+
+  &.text-primary {
+    --main-color: rgb(0, 17, 255);
+  }
+  &.text-secondary {
+    --main-color: rgb(98, 98, 98);
+  }
+  &.text-success {
+    --main-color: rgb(20, 131, 32);
+  }
+  &.text-warning {
+    --main-color: rgb(243, 170, 0);
+  }
+  &.text-danger {
+    --main-color: rgb(220, 11, 0);
+  }
+  &.text-info {
+    --main-color: rgb(0, 242, 255);
+  }
+  &.bg-glass {
+    --background-color: rgba(255, 255, 255, 0.3);
+  }
+  &.bg-primary {
+    --main-color: rgb(253, 253, 253);
+    --background-color: rgb(0, 17, 255);
+  }
+  &.bg-secondary {
+    --main-color: rgb(253, 253, 253);
+    --background-color: rgb(98, 98, 98);
+  }
+  &.bg-success {
+    --main-color: rgb(253, 253, 253);
+    --background-color: rgb(20, 131, 32);
+  }
+  &.bg-warning {
+    --main-color: rgb(253, 253, 253);
+    --background-color: rgb(243, 170, 0);
+  }
+  &.bg-danger {
+    --main-color: rgb(253, 253, 253);
+    --background-color: rgb(220, 11, 0);
+  }
+  &.bg-info {
+    --main-color: rgb(253, 253, 253);
+    --background-color: rgb(0, 242, 255);
+  }
+  &.bg-dark {
+    --main-color: rgb(253, 253, 253);
+    --background-color: rgb(0, 0, 0);
+  }
+  &.bg-telegram {
+    --main-color: var(--tg-theme-button-text-color);
+    --background-color: var(--tg-theme-button-color);
+  }
+}
+
+.button {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  height: 50px;
+  width: calc(50% - 20px);
+  margin: 10px;
+
+  backdrop-filter: blur(10px);
+  background: var(--background-color);
+
+  border-radius: 20px;
+  border: 1px solid var(--main-color);
+
+  font-size: 25px;
+  text-decoration: none;
+
+  color: var(--main-color);
+  
+  &.sm {
+    height: 50px;
+    width: calc(35% - 20px);
+  }
+
+  &.lg {
+    height: 50px;
+    width: calc(100% - 20px);
+  }
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 2px var(--main-color);
+  }
+}
