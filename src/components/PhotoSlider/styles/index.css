@@ -1,0 +1,298 @@
+/* PhotoSlider.css */
+.photo-slider {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #333;
+  background-color: #000000;
+}
+
+.photo-slider__container {
+  position: relative;
+}
+
+.photo-slider__main-image {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.photo-slider__image {
+  width: calc(100% - 40px);
+  height: 100%;
+  object-fit: contain;
+  margin: 0 20px;
+  transition: transform 0.3s ease;
+}
+
+/* .photo-slider__main-image:hover .photo-slider__image {
+  transform: scale(1.02);
+} */
+
+.photo-slider__nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.photo-slider__nav-button:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.photo-slider__nav-button--prev {
+  left: 20px;
+}
+
+.photo-slider__nav-button--next {
+  right: 20px;
+}
+
+.photo-slider__nav-button svg {
+  width: 24px;
+  height: 24px;
+  color: #333;
+}
+
+/* Обновленные стили для миниатюр с прокруткой */
+.photo-slider__thumbnails-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.photo-slider__thumbnails-scroll-wrapper {
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scroll-behavior: smooth;
+}
+
+.photo-slider__thumbnails-scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.photo-slider__thumbnails {
+  display: flex;
+  gap: 8px;
+  padding: 8px 4px;
+  min-width: min-content;
+}
+
+.photo-slider__thumbnail {
+  position: relative;
+  flex: 0 0 auto;
+  width: 80px;
+  height: 56px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.photo-slider__thumbnail:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: rgba(51, 51, 51, 0.3);
+}
+
+.photo-slider__thumbnail--active {
+  border: 3px solid #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.photo-slider__thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: -webkit-optimize-contrast; /* Улучшение рендеринга в Chrome/Safari */
+  image-rendering: crisp-edges; /* Улучшение рендеринга в Firefox */
+  image-rendering: pixelated; /* Для сохранения деталей */
+  filter: brightness(1.05); /* Легкое осветление для лучшей видимости */
+}
+
+.photo-slider__thumbnail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+.photo-slider__thumbnail:hover .photo-slider__thumbnail-overlay,
+.photo-slider__thumbnail--active .photo-slider__thumbnail-overlay {
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Кнопки прокрутки миниатюр */
+.photo-slider__thumbnails-scroll-buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.photo-slider__thumbnails-scroll-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  pointer-events: all;
+}
+
+.photo-slider__thumbnails-scroll-btn:hover {
+  background: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.photo-slider__thumbnails-scroll-btn--prev {
+  transform: translateX(-50%);
+}
+
+.photo-slider__thumbnails-scroll-btn--next {
+  transform: translateX(50%);
+}
+
+.photo-slider__thumbnails-scroll-btn svg {
+  width: 16px;
+  height: 16px;
+  color: #333;
+}
+
+.photo-slider__indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.photo-slider__indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.photo-slider__indicator:hover {
+  background: #999;
+}
+
+.photo-slider__indicator--active {
+  background: #333;
+  transform: scale(1.2);
+}
+
+.photo-slider__counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  /* color: #333; */
+  color: rgba(255, 255, 255, 0.9);;
+  font-weight: 300;
+}
+
+.photo-slider__current {
+  font-weight: 500;
+}
+
+.photo-slider__divider {
+  margin: 0 8px;
+  opacity: 0.6;
+}
+
+.photo-slider__total {
+  opacity: 0.6;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .photo-slider__main-image {
+    height: 400px;
+  }
+  
+  .photo-slider__title {
+    font-size: 2rem;
+  }
+  
+  .photo-slider__description {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+  
+  .photo-slider__nav-button {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .photo-slider__thumbnail {
+    width: 70px;
+    height: 49px;
+  }
+  
+  .photo-slider__thumbnails-scroll-btn {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-slider__main-image {
+    height: 300px;
+  }
+  
+  .photo-slider__title {
+    font-size: 1.75rem;
+  }
+  
+  .photo-slider__thumbnail {
+    width: 60px;
+    height: 42px;
+  }
+  
+  .photo-slider__thumbnails-scroll-buttons {
+    display: none; /* Скрываем кнопки прокрутки на очень маленьких экранах */
+  }
+}
