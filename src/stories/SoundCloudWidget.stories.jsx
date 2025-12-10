@@ -44,8 +44,25 @@ ColdplayTrack.args = {
   url: 'https://soundcloud.com/coldplay/adventure-of-a-lifetime',
 };
 
+export const PostMaloneTrack = Template.bind({});
+PostMaloneTrack.args = {
+  url: 'https://soundcloud.com/postmalone/take-what-you-want-feat-ozzy',
+};
+
 export const MacMillerAlbum = Template.bind({});
 MacMillerAlbum.args = {
   url: 'https://soundcloud.com/larryfisherman/sets/the-divine-feminine-3',
+  height: 500,
+};
+
+export const MacMillerAlbum2 = Template.bind({});
+MacMillerAlbum2.args = {
+  url: 'https://soundcloud.com/larryfisherman/sets/circles-deluxe',
+  height: 500,
+};
+
+export const MacMillerAlbum3 = Template.bind({});
+MacMillerAlbum3.args = {
+  url: 'https://soundcloud.com/larryfisherman/sets/swimming',
   height: 500,
 };
